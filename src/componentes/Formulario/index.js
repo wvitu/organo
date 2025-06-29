@@ -5,7 +5,7 @@ import Botao from '../Botao';
 import { useState } from 'react';
 
 
-const Formulario = () => {
+const Formulario = (props) => {
 
     const times = [
         'Programação',
@@ -25,6 +25,12 @@ const Formulario = () => {
 
     const aoSalvar = (evento) => {
         evento.preventDefault();
+        props.aoColaboradorCadastrado({
+            nome,
+            cargo,
+            imagem,
+            time
+        });
 
     }
 
